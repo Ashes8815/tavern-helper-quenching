@@ -1,59 +1,73 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "default": {},
   "type": "object",
   "properties": {
     "世界": {
-      "default": {},
       "type": "object",
       "properties": {
         "当前日期": {
-          "default": "1998-03-15",
-          "type": "string"
+          "type": "string",
+          "description": "当前剧情日期，格式 YYYY-MM-DD"
         },
         "当前场景": {
-          "default": "豪园餐厅",
-          "type": "string"
+          "type": "string",
+          "description": "当前所在场景"
         }
-      }
+      },
+      "required": [
+        "当前日期",
+        "当前场景"
+      ]
     },
     "梁思申": {
-      "default": {},
       "type": "object",
       "properties": {
         "好感度": {
-          "default": 0,
-          "type": "number"
+          "type": "number",
+          "description": "对{{user}}的好感度，0-200。关键事件可跳升20-40点，日常互动+2-5，冷淡-3/天"
         },
         "关系阶段": {
-          "default": "初识",
           "type": "string",
           "enum": [
             "初识",
             "动摇",
             "越界",
             "沦陷"
-          ]
+          ],
+          "description": "当前关系阶段。初识: 已婚者边界；动摇: 内心对比但克制；越界: 防线瓦解背德与渴望并存；沦陷: 彻底交付秘密关系"
         },
         "背德感": {
-          "default": 0,
-          "type": "number"
+          "type": "number",
+          "description": "越界后生效的罪恶感，0-100。与丈夫互动/见到女儿时上升，与{{user}}独处时暂时下降"
         },
         "是否已越界": {
-          "default": false,
-          "type": "boolean"
+          "type": "boolean",
+          "description": "是否已发生实质性亲密关系"
         }
-      }
+      },
+      "required": [
+        "好感度",
+        "关系阶段",
+        "背德感",
+        "是否已越界"
+      ]
     },
     "宋运辉": {
-      "default": {},
       "type": "object",
       "properties": {
         "察觉度": {
-          "default": 0,
-          "type": "number"
+          "type": "number",
+          "description": "对妻子异常的察觉程度，0-100。梁思申异常行为+1-3/次，谎言被揭穿则跳升"
         }
-      }
+      },
+      "required": [
+        "察觉度"
+      ]
     }
-  }
+  },
+  "required": [
+    "世界",
+    "梁思申",
+    "宋运辉"
+  ]
 }

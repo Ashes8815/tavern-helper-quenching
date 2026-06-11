@@ -1,16 +1,17 @@
 export const Schema = z.object({
   世界: z.object({
-    当前日期: z.string().prefault('1998-03-15'),
-    当前场景: z.string().prefault('豪园餐厅'),
-  }).prefault({}),
+    当前日期: z.string().describe('当前剧情日期，格式 YYYY-MM-DD'),
+    当前场景: z.string().describe('当前所在场景'),
+  }),
   梁思申: z.object({
-    好感度: z.coerce.number().transform(v => _.clamp(v, 0, 200)).prefault(0),
-    关系阶段: z.enum(['初识', '动摇', '越界', '沦陷']).prefault('初识'),
-    背德感: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(0),
-    是否已越界: z.coerce.boolean().prefault(false),
-  }).prefault({}),
+    好感度: z.coerce.number().describe('对{{user}}的好感度，0-200。关键事件可跳升20-40点，日常互动+2-5，冷淡-3/天'),
+    关系阶段: z.enum(['初识', '动摇', '越界', '沦陷']).describe('当前关系阶段。初识: 已婚者边界；动摇: 内心对比但克制；越界: 防线瓦解背德与渴望并存；沦陷: 彻底交付秘密关系'),
+    背德感: z.coerce.number().describe('越界后生效的罪恶感，0-100。与丈夫互动/见到女儿时上升，与{{user}}独处时暂时下降'),
+    是否已越界: z.coerce.boolean().describe('是否已发生实质性亲密关系'),
+  }),
   宋运辉: z.object({
-    察觉度: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(0),
-  }).prefault({}),
-}).prefault({});
+    察觉度: z.coerce.number().describe('对妻子异常的察觉程度，0-100。梁思申异常行为+1-3/次，谎言被揭穿则跳升'),
+  }),
+});
+
 export type Schema = z.output<typeof Schema>;
