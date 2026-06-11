@@ -1,5 +1,6 @@
 <template>
   <div class="streaming-msg">
+    <div class="msg-text" v-html="msgHtml"></div>
     <div v-if="store?.data" class="panel">
       <div class="panel-top">
         <div class="panel-ornament"></div>
@@ -56,9 +57,20 @@
 </template>
 
 <script setup lang="ts">
+import { injectStreamingMessageContext } from '@util/streaming';
 import { useDataStore } from './store';
 
+const context = injectStreamingMessageContext();
 const store = useDataStore();
+
+const msgHtml = computed(() => {
+  if (!context.message) return '';
+  try {
+    return formatAsDisplayedMessage(context.message, { message_id: context.message_id });
+  } catch {
+    return _.escape(context.message).replace(/\n/g, '<br>');
+  }
+});
 
 const affPct = computed(() => ((store.data?.梁思申.好感度 ?? 0) / 200) * 100);
 
