@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "default": "1998-03-15",
+          "type": "string"
+        },
+        "当前场景": {
+          "default": "豪园餐厅",
+          "type": "string"
+        }
+      }
+    },
+    "梁思申": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        },
+        "关系阶段": {
+          "default": "初识",
+          "type": "string",
+          "enum": [
+            "初识",
+            "动摇",
+            "越界",
+            "沦陷"
+          ]
+        },
+        "背德感": {
+          "default": 0,
+          "type": "number"
+        },
+        "是否已越界": {
+          "default": false,
+          "type": "boolean"
+        }
+      }
+    },
+    "宋运辉": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "察觉度": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    }
+  }
+}

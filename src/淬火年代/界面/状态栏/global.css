@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-card: #fafaf5;
+  --c-border: #3c3c3c;
+  --c-text: #2c2c2c;
+  --c-text-muted: #888;
+  --c-bar-bg: #e8e8e0;
+  --c-affection: #c44536;
+  --c-guilt: #6b4c8a;
+  --c-suspicion: #d4a017;
+  --c-stage: #3c6e71;
+  --c-accent: #284b63;
+  --font-mono: 'Courier New', 'Microsoft YaHei', monospace;
+}
