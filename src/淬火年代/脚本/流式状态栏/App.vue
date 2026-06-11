@@ -66,8 +66,7 @@ const store = useDataStore();
 const msgHtml = computed(() => {
   if (!context.message) return '';
   try {
-    return formatAsDisplayedMessage(context.message, { message_id: context.message_id })
-      .replaceAll('mes_text', 'mes_streaming');
+    return formatAsDisplayedMessage(context.message, { message_id: context.message_id });
   } catch {
     return _.escape(context.message).replace(/\n/g, '<br>');
   }
