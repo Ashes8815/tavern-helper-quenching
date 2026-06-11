@@ -1,0 +1,2 @@
+import{registerMvuSchema as e}from'https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js';const r=z,t=r.z.object({世界:r.z.object({当前日期:r.z.string(),当前场景:r.z.string()}),梁思申:r.z.object({好感度:r.z.coerce.number().transform(e=>_.clamp(e,0,200)),关系阶段:r.z.enum(['初识','动摇','越界','沦陷']),背德感:r.z.coerce.number().transform(e=>_.clamp(e,0,100)),是否已越界:r.z.coerce.boolean()}),宋运辉:r.z.object({察觉度:r.z.coerce.number().transform(e=>_.clamp(e,0,100))})});$(()=>{e(t)});
+//# sourceMappingURL=index.js.map
