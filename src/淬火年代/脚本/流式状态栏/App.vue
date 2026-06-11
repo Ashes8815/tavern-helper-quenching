@@ -88,25 +88,29 @@ const stageClass = computed(() => 'stage-' + (store.data?.梁思申.关系阶段
 </script>
 
 <style>
-/* panel styles — unscoped so vue data attributes don't leak into msgHtml */
+.streaming-msg { width: 100%; }
+.panel * { all: revert; }
 .panel {
+  all: initial;
   max-width: 440px;
   margin: 16px auto 0;
   background: #121316;
   border: 1px solid #26282d;
   border-radius: 10px;
   overflow: hidden;
-  font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+  font-family: 'Segoe UI','Microsoft YaHei',system-ui,sans-serif;
+  font-size: 13px;
   color: #b8bac4;
   user-select: none;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.02) inset;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.02) inset;
 }
+
 .panel-top {
   display: flex; align-items: center; padding: 10px 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
   border-bottom: 1px solid #1e1f24; gap: 12px;
 }
-.panel-ornament { width: 32px; height: 1px; background: linear-gradient(90deg, transparent, #3a3d44 50%, transparent); }
+.panel-ornament { width: 32px; height: 1px; background: linear-gradient(90deg,transparent,#3a3d44 50%,transparent); }
 .panel-hdr { flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; }
 .panel-date { font-size: 10px; font-weight: 500; color: #6b7080; letter-spacing: 1.5px; }
 .panel-dot { color: #3a3d44; font-size: 14px; }
@@ -131,10 +135,10 @@ const stageClass = computed(() => 'stage-' + (store.data?.梁思申.关系阶段
 .gauge-val em { font-style: normal; font-weight: 400; color: #4a4d56; font-size: 10px; }
 .gauge-track { position: relative; height: 8px; background: #0c0d10; border-radius: 4px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.6); }
 .gauge-fill { height: 100%; border-radius: 4px; transition: width 0.6s; position: relative; }
-.gauge-fill::after { content:''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent 60%, rgba(0,0,0,0.1)); }
-.gauge-fill.aff { background: linear-gradient(90deg, #b83227, #e05343); box-shadow: 0 0 8px rgba(224,83,67,0.3); }
-.gauge-fill.glt { background: linear-gradient(90deg, #4e3572, #7b5da7); box-shadow: 0 0 8px rgba(123,93,167,0.3); }
-.gauge-fill.sus { background: linear-gradient(90deg, #8a6f24, #c4a23c); box-shadow: 0 0 8px rgba(196,162,60,0.3); }
+.gauge-fill::after { content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.15),transparent 60%,rgba(0,0,0,0.1)); }
+.gauge-fill.aff { background: linear-gradient(90deg,#b83227,#e05343); box-shadow: 0 0 8px rgba(224,83,67,0.3); }
+.gauge-fill.glt { background: linear-gradient(90deg,#4e3572,#7b5da7); box-shadow: 0 0 8px rgba(123,93,167,0.3); }
+.gauge-fill.sus { background: linear-gradient(90deg,#8a6f24,#c4a23c); box-shadow: 0 0 8px rgba(196,162,60,0.3); }
 .gauge-ticks { position: absolute; inset: 0; pointer-events: none; }
 .gauge-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.06); }
 </style>
